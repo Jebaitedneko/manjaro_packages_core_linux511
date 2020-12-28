@@ -14,11 +14,11 @@ pkgname=('linux511' 'linux511-headers')
 _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
-_rc=rc0
-_commit=8653b778e454a7708847aeafe689bce07aeeb94e
-_shortcommit=.${_rc}.d1222.g${_commit:0:7}
+_rc=rc1
+_commit=5c8fe583cce542aa0b84adc939ce85293de36e5e
+_shortcommit=.${_rc}.d1227.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc0.d1222.g8653b77
+pkgver=5.11.rc1.d1227.g5c8fe58
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -68,8 +68,8 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0513-bootsplash.gitpatch'
         # Temp Fixes
         )
-sha256sums=('1f7f2a893195231f66521a90ab05ff05f9ca880a8fb256cec4b88179b469b0c5'
-            '6779c24e46b928ef55e68ffe3778842da0c2ed209841856e124da5bfacd624b6'
+sha256sums=('3587f5277d20de26f305ccdcc5ba92bf99fd471c86f3f0841e12562f9016eb46'
+            '58466eef628d1a906caa36206e76876057e7c7aec226a45054572bc1de8e2a7a'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
@@ -130,7 +130,7 @@ prepare() {
   msg "set extraversion to pkgrel"
   sed -ri "s|^(EXTRAVERSION =).*|\1 -${pkgrel}|" Makefile
   
-  # set patchlevel to 10
+  # set patchlevel to 11
   sed -ri "s|^(PATCHLEVEL =).*|\1 11|" Makefile
 
   msg "don't run depmod on 'make install'"
