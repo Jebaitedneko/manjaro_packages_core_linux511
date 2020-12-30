@@ -15,10 +15,10 @@ _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
 _rc=rc1
-_commit=5c8fe583cce542aa0b84adc939ce85293de36e5e
-_shortcommit=.${_rc}.d1227.g${_commit:0:7}
+_commit=139711f033f636cc78b6aaf7363252241b9698ef
+_shortcommit=.${_rc}.d1229.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc1.d1227.g5c8fe58
+pkgver=5.11.rc1.d1229.g139711f
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -68,8 +68,8 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0513-bootsplash.gitpatch'
         # Temp Fixes
         )
-sha256sums=('3587f5277d20de26f305ccdcc5ba92bf99fd471c86f3f0841e12562f9016eb46'
-            '58466eef628d1a906caa36206e76876057e7c7aec226a45054572bc1de8e2a7a'
+sha256sums=('11862df4e54e4d6fc0ca984ff31eadda6000fc144b5af6a8e08f20e4c3cac063'
+            'b4865c75e711dd72882efd64926b080f742ffcef1696e0391f6495c5ad95f5dc'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
