@@ -14,11 +14,11 @@ pkgname=('linux511' 'linux511-headers')
 _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
-_rc=rc1
-_commit=139711f033f636cc78b6aaf7363252241b9698ef
-_shortcommit=.${_rc}.d1229.g${_commit:0:7}
+_rc=rc2
+_commit=e71ba9452f0b5b2e8dc8aa5445198cd9214a6a62
+_shortcommit=.${_rc}.d0103.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc1.d1229.g139711f
+pkgver=5.11.rc2.d0103.ge71ba94
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -42,6 +42,7 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         'config' 'config.anbox'
         # ARCH Patches
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
+        '0009-ALSA-hda-hdmi-Fix-incorrect-mutex-unlock-in-silent-stream-disable.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
         '0102-iomap-iomap_bmap-should-accept-unwritten-maps.patch'
@@ -49,6 +50,8 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
         # Lenovo + AMD
         '0302-lenovo-wmi2.patch'
+        # other patches
+        '0601-thinkpad_acpi_fix.patch'
         # Bootsplash
         '0401-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
         '0402-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
@@ -68,15 +71,17 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0513-bootsplash.gitpatch'
         # Temp Fixes
         )
-sha256sums=('11862df4e54e4d6fc0ca984ff31eadda6000fc144b5af6a8e08f20e4c3cac063'
+sha256sums=('1d644263b9b6c7ffc97dee1361bc5c384f1fae4294cbc64d994fac192e01b249'
             'b4865c75e711dd72882efd64926b080f742ffcef1696e0391f6495c5ad95f5dc'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
+            '4696880b7d447af6814cfa214153931b6a7501257643b73274e49a330476a12e'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '95745075edd597caa92b369cfbcd11a04c9e3c88c0c987c70114924e1e01df5c'
             'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
             '83b5684223309809393bdffc5122924cb9940403d682a887b0aa6524015df973'
             '1d58ef2991c625f6f0eb33b4cb8303932f53f1c4694e42bae24c9cd36d2ad013'
+            '32dc1c7461c88519a90323e47c2b16891edda56aa65a75e981cebcd031313491'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
             '37a221c12b40122167b0a30b5a9f2fc99e2aeb94e4db58a719c2b30171c5aeb5'
