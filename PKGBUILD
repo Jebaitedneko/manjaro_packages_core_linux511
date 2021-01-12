@@ -14,11 +14,11 @@ pkgname=('linux511' 'linux511-headers')
 _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
-_rc=rc2
-_commit=e71ba9452f0b5b2e8dc8aa5445198cd9214a6a62
-_shortcommit=.${_rc}.d0103.g${_commit:0:7}
+_rc=rc3
+_commit=7c53f6b671f4aba70ff15e1b05148b10d58c2837
+_shortcommit=.${_rc}.d0110.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc2.d0103.ge71ba94
+pkgver=5.11.rc3.d0110.g7c53f6b
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -42,7 +42,6 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         'config' 'config.anbox'
         # ARCH Patches
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
-        '0009-ALSA-hda-hdmi-Fix-incorrect-mutex-unlock-in-silent-stream-disable.patch'
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
         '0102-iomap-iomap_bmap-should-accept-unwritten-maps.patch'
@@ -71,11 +70,10 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0513-bootsplash.gitpatch'
         # Temp Fixes
         )
-sha256sums=('1d644263b9b6c7ffc97dee1361bc5c384f1fae4294cbc64d994fac192e01b249'
-            'b4865c75e711dd72882efd64926b080f742ffcef1696e0391f6495c5ad95f5dc'
+sha256sums=('bd1cd06220aae2cbd5ca16ee24287db587d81fa7fbbe415b2aed1133ea79d0a3'
+            '3e42e7dba917bd09387e0e3b53ad72bd6b1455e41104a1a881949e5e9f00998c'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
-            '4696880b7d447af6814cfa214153931b6a7501257643b73274e49a330476a12e'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '95745075edd597caa92b369cfbcd11a04c9e3c88c0c987c70114924e1e01df5c'
             'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
