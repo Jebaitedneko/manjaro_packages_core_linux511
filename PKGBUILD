@@ -19,7 +19,7 @@ _commit=19c329f6808995b142b3966301f217c831e7cf31
 _shortcommit=.${_rc}.d0117.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
 pkgver=5.11.rc4.d0117.g19c329f
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -42,11 +42,15 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         'config' 'config.anbox'
         # ARCH Patches
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
+        '0002-HID-quirks-Add-Apple-Magic-Trackpad-2-to-hid_have_special_driver-list.patch'
+        '0003-iwlwifi-Fix-regression-from-UDP-segmentation-support.patch'
+        # Temp Fixes
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
         '0102-iomap-iomap_bmap-should-accept-unwritten-maps.patch'
         '0103-futex.patch'
         '0104-revert-xhci-Add-support-for-Renesas-controller-with-memory.patch'
+        '0107-quirk-kernel-org-bug-210681-firmware_rome_error.patch'
         # Lenovo + AMD
         '0302-lenovo-wmi2.patch'
         # other patches
@@ -68,16 +72,18 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0511-bootsplash.patch'
         '0512-bootsplash.patch'
         '0513-bootsplash.gitpatch'
-        # Temp Fixes
         )
 sha256sums=('7f4b757d4fedabaa6556c0156347aa05ae3c6e4f469e6ae0ff97a43a756edcd2'
             '3e42e7dba917bd09387e0e3b53ad72bd6b1455e41104a1a881949e5e9f00998c'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
+            'df5843818f1571841e1a8bdbe38d7f853d841f38de46d6a6a5765de089495578'
+            '5791e6fd2ae2f4938b1190af65da3213cbfa2b3e7f50e6dcfdc8ded3ca17d720'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '95745075edd597caa92b369cfbcd11a04c9e3c88c0c987c70114924e1e01df5c'
             'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
             '83b5684223309809393bdffc5122924cb9940403d682a887b0aa6524015df973'
+            '5e804e1f241ce542f3f0e83d274ede6aa4b0539e510fb9376f8106e8732ce69b'
             '1d58ef2991c625f6f0eb33b4cb8303932f53f1c4694e42bae24c9cd36d2ad013'
             '32dc1c7461c88519a90323e47c2b16891edda56aa65a75e981cebcd031313491'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
