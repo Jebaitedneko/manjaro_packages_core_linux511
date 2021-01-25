@@ -14,12 +14,12 @@ pkgname=('linux511' 'linux511-headers')
 _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
-_rc=rc4
-_commit=19c329f6808995b142b3966301f217c831e7cf31
-_shortcommit=.${_rc}.d0117.g${_commit:0:7}
+_rc=rc5
+_commit=6ee1d745b7c9fd573fba142a2efdad76a9f1cb04
+_shortcommit=.${_rc}.d0124.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc4.d0117.g19c329f
-pkgrel=2
+pkgver=5.11.rc5.d0124.g6ee1d74
+pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -54,7 +54,6 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         # Lenovo + AMD
         '0302-lenovo-wmi2.patch'
         # other patches
-        '0601-thinkpad_acpi_fix.patch'
         # Bootsplash
         '0401-revert-fbcon-remove-now-unusued-softback_lines-cursor-argument.patch'        
         '0402-revert-fbcon-remove-no-op-fbcon_set_origin.patch'
@@ -73,7 +72,7 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0512-bootsplash.patch'
         '0513-bootsplash.gitpatch'
         )
-sha256sums=('7f4b757d4fedabaa6556c0156347aa05ae3c6e4f469e6ae0ff97a43a756edcd2'
+sha256sums=('41fbad224f2543acd25f2d42cf9dd4bb32d6b737489574f132a09727d1f13fd4'
             '3e42e7dba917bd09387e0e3b53ad72bd6b1455e41104a1a881949e5e9f00998c'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
@@ -85,7 +84,6 @@ sha256sums=('7f4b757d4fedabaa6556c0156347aa05ae3c6e4f469e6ae0ff97a43a756edcd2'
             '83b5684223309809393bdffc5122924cb9940403d682a887b0aa6524015df973'
             '5e804e1f241ce542f3f0e83d274ede6aa4b0539e510fb9376f8106e8732ce69b'
             '1d58ef2991c625f6f0eb33b4cb8303932f53f1c4694e42bae24c9cd36d2ad013'
-            '32dc1c7461c88519a90323e47c2b16891edda56aa65a75e981cebcd031313491'
             '2b11905b63b05b25807dd64757c779da74dd4c37e36d3f7a46485b1ee5a9d326'
             '94a8538251ad148f1025cc3de446ce64f73dc32b01815426fb159c722e8fa5bc'
             '37a221c12b40122167b0a30b5a9f2fc99e2aeb94e4db58a719c2b30171c5aeb5'
