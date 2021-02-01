@@ -14,11 +14,11 @@ pkgname=('linux511' 'linux511-headers')
 _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
-_rc=rc5
-_commit=6ee1d745b7c9fd573fba142a2efdad76a9f1cb04
-_shortcommit=.${_rc}.d0124.g${_commit:0:7}
+_rc=rc6
+_commit=1048ba83fb1c00cd24172e23e8263972f6b5d9ac
+_shortcommit=.${_rc}.d0131.g${_commit:0:7}
 _pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc5.d0124.g6ee1d74
+pkgver=5.11.rc6.d0131.g1048ba8
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -43,7 +43,6 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         # ARCH Patches
         '0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-CLONE_NEWUSER.patch'
         '0002-HID-quirks-Add-Apple-Magic-Trackpad-2-to-hid_have_special_driver-list.patch'
-        '0003-iwlwifi-Fix-regression-from-UDP-segmentation-support.patch'
         # Temp Fixes
         # MANJARO Patches
         '0101-i2c-nuvoton-nc677x-hwmon-driver.patch'
@@ -72,12 +71,11 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0512-bootsplash.patch'
         '0513-bootsplash.gitpatch'
         )
-sha256sums=('41fbad224f2543acd25f2d42cf9dd4bb32d6b737489574f132a09727d1f13fd4'
-            '3e42e7dba917bd09387e0e3b53ad72bd6b1455e41104a1a881949e5e9f00998c'
+sha256sums=('dfec37e282a141ba86e4f5674fc7f63d7b2fbd10c707ee56f58b3bc69dbbe688'
+            '4d01f41d2159cf077ee58ecf71d01be3909b8fe751a861df129597375adca91c'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'df5843818f1571841e1a8bdbe38d7f853d841f38de46d6a6a5765de089495578'
-            '5791e6fd2ae2f4938b1190af65da3213cbfa2b3e7f50e6dcfdc8ded3ca17d720'
             '7823d7488f42bc4ed7dfae6d1014dbde679d8b862c9a3697a39ba0dae5918978'
             '95745075edd597caa92b369cfbcd11a04c9e3c88c0c987c70114924e1e01df5c'
             'b302ba6c5bbe8ed19b20207505d513208fae1e678cf4d8e7ac0b154e5fe3f456'
