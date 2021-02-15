@@ -14,12 +14,8 @@ pkgname=('linux511' 'linux511-headers')
 _kernelname=-MANJARO
 _basekernel=5.11
 _basever=511
-_rc=rc7
-_commit=291009f656e8eaebbdfd3a8d99f6b190a9ce9deb
-_shortcommit=.${_rc}.d0210.g${_commit:0:7}
-_pkgver=${_basekernel}${_shortcommit}
-pkgver=5.11.rc7.d0210.g291009f
-pkgrel=1
+pkgver=5.11.0
+pkgrel=0
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -35,9 +31,9 @@ makedepends=('bc'
     'tar'
     'xz')
 options=('!strip')
-source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.xz"
-        #"https://www.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
-        "linux-${_pkgver}.zip::https://codeload.github.com/torvalds/linux/zip/$_commit"
+source=(https://github.com/torvalds/linux/archive/v${_basekernel}.tar.gz
+#        "https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.xz"
+#        "https://www.kernel.org/pub/linux/kernel/v5.x/patch-${pkgver}.xz"
         # the main kernel config files
         'config' 'config.anbox'
         # ARCH Patches
@@ -71,8 +67,8 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v5.x/linux-${_basekernel}.tar.
         '0512-bootsplash.patch'
         '0513-bootsplash.gitpatch'
         )
-sha256sums=('a99ad62003dba9e3ca3646a85e7915d8ddd835ee87a2d9d5a6620e3a1734f842'
-            '4d01f41d2159cf077ee58ecf71d01be3909b8fe751a861df129597375adca91c'
+sha256sums=('6adabb592bf3ebe412b10262bd5b499524e5227d6727368de826710406c378f6'
+            '0a8ff8dc77264217ac6cb7ec34be8a3a17d1561de7dff0e995d939219c56941c'
             'fc896e5b00fad732d937bfb7b0db41922ecdb3a488bc1c1b91b201e028eed866'
             '986f8d802f37b72a54256f0ab84da83cb229388d58c0b6750f7c770818a18421'
             'df5843818f1571841e1a8bdbe38d7f853d841f38de46d6a6a5765de089495578'
@@ -99,17 +95,13 @@ sha256sums=('a99ad62003dba9e3ca3646a85e7915d8ddd835ee87a2d9d5a6620e3a1734f842'
             '60e295601e4fb33d9bf65f198c54c7eb07c0d1e91e2ad1e0dd6cd6e142cb266d'
             '035ea4b2a7621054f4560471f45336b981538a40172d8f17285910d4e0e0b3ef')
 
-pkgver() {
-  printf '%s' "${_pkgver}"
-}
 
 prepare() {
-  mv "${srcdir}/linux-${_commit}" "${srcdir}/linux-${_basekernel}"
   cd "${srcdir}/linux-${_basekernel}"
 
   # add upstream patch
-  #msg "add upstream patch"
-  #patch -p1 -i "${srcdir}/patch-${pkgver}"
+#  msg "add upstream patch"
+#  patch -p1 -i "${srcdir}/patch-${pkgver}"
 
   local src
   for src in "${source[@]}"; do
@@ -134,9 +126,6 @@ prepare() {
 
   msg "set extraversion to pkgrel"
   sed -ri "s|^(EXTRAVERSION =).*|\1 -${pkgrel}|" Makefile
-  
-  # set patchlevel to 11
-  sed -ri "s|^(PATCHLEVEL =).*|\1 11|" Makefile
 
   msg "don't run depmod on 'make install'"
   # We'll do this ourselves in packaging
